@@ -25,7 +25,7 @@ After each installation,
 
 Code for each tutorial will be released on the week that we cover that topic.
 
-Tutorial 1 - Introduction - [code](https://github.com/InteractiveDataVis/Interactive-Data-Vis-Sp2020/tree/master/tutorial1_intro), [TimeWasters](https://interactivedatavis.github.io/Interactive-Data-Vis-Sp2020/tutorial1_intro/)
+Tutorial 1 - Introduction - [code](https://github.com/InteractiveDataVis/Interactive-Data-Vis-Sp2020/tree/master/tutorial1_intro), [TimeWasters](https://interactivedatavis.github.io/Interactive-Data-Vis-Sp2020/tutorial1_intro/index.html)
 
 Tutorial 2 - Quantities and Amounts - [code](https://github.com/InteractiveDataVis/Interactive-Data-Vis-Sp2020/tree/master/tutorial2_quantities_and_amounts), [demo](https://interactivedatavis.github.io/Interactive-Data-Vis-Sp2020/tutorial2_quantities_and_amounts/demo/)
 
