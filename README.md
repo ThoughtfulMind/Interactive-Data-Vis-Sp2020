@@ -27,7 +27,7 @@ Code for each tutorial will be released on the week that we cover that topic.
 
 Tutorial 1 - Introduction - [code](https://github.com/InteractiveDataVis/Interactive-Data-Vis-Sp2020/tree/master/tutorial1_intro), [TimeWasters](https://interactivedatavis.github.io/Interactive-Data-Vis-Sp2020/tutorial1_intro/index.html)
 
-Tutorial 2 - Quantities and Amounts - [code](https://github.com/InteractiveDataVis/Interactive-Data-Vis-Sp2020/tree/master/tutorial2_quantities_and_amounts), [demo](https://interactivedatavis.github.io/Interactive-Data-Vis-Sp2020/tutorial2_quantities_and_amounts/demo/)
+Tutorial 2 - Quantities and Amounts - [code](https://github.com/InteractiveDataVis/Interactive-Data-Vis-Sp2020/tree/master/tutorial2_quantities_and_amounts), [demo](https://thoughtfulmind.github.io/Interactive-Data-Vis-Sp2020/tutorial2_quantities_and_amounts/demo/)
 
 Tutorial 3 - Distributions - [code](https://github.com/InteractiveDataVis/Interactive-Data-Vis-Sp2020/tree/master/tutorial3_distributions), [demo](https://interactivedatavis.github.io/Interactive-Data-Vis-Sp2020/tutorial3_distributions/demo/)
 
