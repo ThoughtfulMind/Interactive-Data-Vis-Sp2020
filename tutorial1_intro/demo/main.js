@@ -4,7 +4,7 @@ d3.csv("../../data/surveyResults.csv").then(data => {
   console.log("data", data);
 
   // select the `table` container in the HTML
-  const table = d3.select("#d3-table");
+  const table = d3.select("#d3-table").style ("color", "red");
 
   /** HEADER */
   const thead = table.append("thead");
@@ -12,7 +12,7 @@ d3.csv("../../data/surveyResults.csv").then(data => {
     .append("tr")
     .append("th")
     .attr("colspan", "7")
-    .text("Pre-Survey Results");
+    .text("Biggest Time Wasters");
 
   thead
     .append("tr")

@@ -12,7 +12,7 @@ d3.csv("D3BiggestTimeWasters.csv").then(data => {
     .append("tr")
     .append("th")
     .attr("colspan", "7")
-    .text("Pre-Survey Results");
+    .text("Top 3 Time Wasters – Monthly Averages");
 
   thead
     .append("tr")
