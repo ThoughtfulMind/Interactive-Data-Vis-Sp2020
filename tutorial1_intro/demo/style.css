@@ -16,7 +16,7 @@ th {
 }
 
 tr {
-  border-bottom: solid 1px #d3d3d3;
+  border-bottom: solid 1px hsl(200, 5%, 89%);
   line-height: 1.75;
 }
 
