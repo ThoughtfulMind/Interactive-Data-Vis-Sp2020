@@ -9,7 +9,7 @@ d3.csv("./data/MostCommonWordsGoogleBooks.csv", d3.autoType).then(data => {
     const width = window.innerWidth * 2,
       height = window.innerHeight / 2,
       paddingInner = 0.2,
-      margin = { top: 20, bottom: 40, left: 40, right: 40 };
+      margin = { top: 20, bottom: 30, left: 30, right: 30 };
   
     /** SCALES */
     // reference for d3.scales: https://github.com/d3/d3-scale
