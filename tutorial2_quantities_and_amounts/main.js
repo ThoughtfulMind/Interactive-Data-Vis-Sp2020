@@ -7,7 +7,7 @@ d3.csv("./data/MostCommonWordsGoogleBooks.csv", d3.autoType).then(data => {
     /** CONSTANTS */
     // constants help us reference the same values throughout our code
     const width = window.innerWidth * 2,
-      height = window.innerHeight / 2,
+      height = window.innerHeight / 4,
       paddingInner = 0.2,
       margin = { top: 20, bottom: 30, left: 30, right: 30 };
   
@@ -52,7 +52,7 @@ d3.csv("./data/MostCommonWordsGoogleBooks.csv", d3.autoType).then(data => {
       .join("text")
       .attr("class", "label")
       // this allows us to position the text in the center of the bar
-      .attr("x", d => xScale(d.WORD) + (xScale.bandwidth() / 4))
+      .attr("x", d => xScale(d.WORD) + (xScale.bandwidth() /2))
       .attr("y", d => yScale(d.COUNT))
       .text(d => d.COUNT)
       .attr("dy", "1.25em");
