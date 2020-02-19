@@ -52,7 +52,7 @@ d3.csv("./data/MostCommonWordsGoogleBooks.csv", d3.autoType).then(data => {
       .join("text")
       .attr("class", "label")
       // this allows us to position the text in the center of the bar
-      .attr("x", d => xScale(d.WORD) + (xScale.bandwidth() / 2))
+      .attr("x", d => xScale(d.WORD) + (xScale.bandwidth() / 4))
       .attr("y", d => yScale(d.COUNT))
       .text(d => d.COUNT)
       .attr("dy", "1.25em");
