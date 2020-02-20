@@ -24,7 +24,7 @@ let state = {
 /**
  * LOAD DATA
  * */
-d3.json("../../data/fide_historical.csv", d3.autoType).then(raw_data => {
+d3.json("../../data/environmentRatings.json", d3.autoType).then(raw_data => {
   console.log("raw_data", raw_data);
   state.data = raw_data;
   init();
@@ -109,6 +109,8 @@ function init() {
  * we call this everytime there is an update to the data/state
  * */
 function draw() {
+
+  //console.log("draw")
   // filter the data for the selectedParty
   let filteredData = state.data;
   // if there is a selectedParty, filter the data before mapping it to our elements
