@@ -90,7 +90,7 @@ function init() {
     .attr("class", "axis-label")
     .attr("y", "50%")
     .attr("dx", "-3em")
-    .attr("writing-mode", "vertical-rl")
+    .attr("writing-mode", "vertical-lr")
     .text("Games");
 
   // + CREATE SVG ELEMENT
