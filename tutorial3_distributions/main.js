@@ -143,7 +143,7 @@ function draw() {
           update
             .transition()
             .duration(1)
-            .attr("stroke", "lightgrey")
+            .attr("stroke", "white")
             .transition()
             .duration(1)
             .attr("stroke", "lightgrey")
