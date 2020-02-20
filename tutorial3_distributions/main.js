@@ -142,10 +142,10 @@ function draw() {
           // update selections -- all data elements that match with a `.dot` element
           update
             .transition()
-            .duration(5)
+            .duration(1)
             .attr("stroke", "lightgrey")
             .transition()
-            .duration(5)
+            .duration(1)
             .attr("stroke", "lightgrey")
         ),
       exit =>
