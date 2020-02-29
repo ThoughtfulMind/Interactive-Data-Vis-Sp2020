@@ -116,7 +116,7 @@ function init() {
     .attr("y", "50%")
     .attr("dx", "-3em")
     .attr("writing-mode", "vertical-rl")
-    .text("Population");
+    .text("Total");
 
   draw(); // calls the draw function
 }
@@ -127,7 +127,7 @@ function init() {
  * */
 function draw() {
   // filter the data for the selectedParty
-  let filteredData;
+  let filteredData = []
   if (state.selectedCountry !== null) {
     filteredData = state.data.filter(d => d.country === state.selectedCountry);
   }
