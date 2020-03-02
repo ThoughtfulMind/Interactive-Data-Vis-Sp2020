@@ -83,7 +83,6 @@ function init() {
     ])
     .join("option")
     .attr("value", d => d)
-    .attr("fill", "#cce5df")
     .text(d => d);
 
   // this ensures that the selected value is the same as what we have in state when we initialize the options
@@ -94,15 +93,13 @@ function init() {
     .select("#d3-container")
     .append("svg")
     .attr("width", width)
-    .attr("height", height)
-    .attr("fill", "#cce5df");
+    .attr("height", height);
 
   // add the xAxis
   svg
     .append("g")
     .attr("class", "axis x-axis")
     .attr("transform", `translate(0,${height - margin.bottom})`)
-    .attr("fill", "#cce5df")
     .call(xAxis)
     .append("text")
     .attr("class", "axis-label")
@@ -115,14 +112,12 @@ function init() {
     .append("g")
     .attr("class", "axis y-axis")
     .attr("transform", `translate(${margin.left},0)`)
-    .attr("fill", "#cce5df")
     .call(yAxis)
     .append("text")
     .attr("class", "axis-label")
     .attr("y", "50%")
     .attr("dx", "-3em")
     .attr("writing-mode", "vertical-rl")
-    .attr("fill", "#cce5df")
     .text("Confirmed Cases");
 
   draw(); // calls the draw function
@@ -150,12 +145,10 @@ function draw() {
     .call(yAxis.scale(yScale)); // this updates the yAxis' scale to be our newly updated one
 
   // we define our line function generator telling it how to access the x,y values for each point
-  const areaFunc = d3
-    .area()
+  const lineFunc = d3
+    .line()
     .x(d => xScale(d.year))
-    .y0(d=> yScale(0))
-    .y1(d => yScale(d.population));
-
+    .y(d => yScale(d.population));
 
   const dot = svg
     .selectAll(".dot")
@@ -168,7 +161,6 @@ function draw() {
           .attr("class", "dot") // Note: this is important so we can identify it in future updates
           .attr("r", radius)
           .attr("cy", height - margin.bottom) // initial value - to be transitioned
-          .attr("fill", "#cce5df")
           .attr("cx", d => xScale(d.year)),
       update => update,
       exit =>
@@ -179,7 +171,6 @@ function draw() {
             .delay(d => d.year)
             .duration(500)
             .attr("cy", height - margin.bottom)
-            .attr("fill", "#cce5df")
             .remove()
         )
     )
@@ -191,17 +182,15 @@ function draw() {
           .transition() // initialize transition
           .duration(1000) // duration 1000ms / 1s
           .attr("cy", d => yScale(d.population)) // started from the bottom, now we're here
-          .attr("fill", "#cce5df")
     );
 
-  const area = svg
+  const line = svg
     .selectAll("path.trend")
     .data([filteredData])
     .join(
       enter =>
         enter
           .append("path")
-          .attr("fill", "#cce5df")
           .attr("class", "trend")
           .attr("opacity", 0), // start them off as opacity 0 and fade them in
       update => update, // pass through the update selection
@@ -211,10 +200,7 @@ function draw() {
       selection
         .transition() // sets the transition on the 'Enter' + 'Update' selections together.
         .duration(1000)
-      .attr("stroke", "#69b3a2")
-      //.attr("stroke-width", 1.5)
-      .attr("fill", "#cce5df")
-      .attr("opacity", 1)
-      .attr("d", d => areaFunc(d))
+        .attr("opacity", 1)
+        .attr("d", d => lineFunc(d))
     );
 }

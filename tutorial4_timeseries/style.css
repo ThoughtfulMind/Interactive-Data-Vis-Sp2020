@@ -11,7 +11,7 @@ body {
   }
   
   .dot:hover {
-    fill: orange;
+    fill: rgb(255, 51, 0);
   }
   
   .axis-label {
