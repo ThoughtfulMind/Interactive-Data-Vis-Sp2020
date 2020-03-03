@@ -206,7 +206,7 @@ function draw() {
         .duration(1000)
       .attr("stroke", "#69b3a2")
       //.attr("stroke-width", 1.5)
-      .attr("fill", "#cce5df")
+      //.attr("fill", "#cce5df")
       .attr("opacity", 1)
       .attr("d", d => areaFunc(d))
     );
