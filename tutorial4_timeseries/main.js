@@ -83,7 +83,6 @@ function init() {
     ])
     .join("option")
     .attr("value", d => d)
-    .attr("fill", "#cce5df")
     .text(d => d);
 
   // this ensures that the selected value is the same as what we have in state when we initialize the options
@@ -95,14 +94,12 @@ function init() {
     .append("svg")
     .attr("width", width)
     .attr("height", height)
-    .attr("fill", "#cce5df");
 
   // add the xAxis
   svg
     .append("g")
     .attr("class", "axis x-axis")
     .attr("transform", `translate(0,${height - margin.bottom})`)
-    .attr("fill", "#cce5df")
     .call(xAxis)
     .append("text")
     .attr("class", "axis-label")
@@ -115,14 +112,12 @@ function init() {
     .append("g")
     .attr("class", "axis y-axis")
     .attr("transform", `translate(${margin.left},0)`)
-    .attr("fill", "#cce5df")
     .call(yAxis)
     .append("text")
     .attr("class", "axis-label")
     .attr("y", "50%")
     .attr("dx", "-3em")
     .attr("writing-mode", "vertical-rl")
-    .attr("fill", "#cce5df")
     .text("Confirmed Cases");
 
   draw(); // calls the draw function
@@ -165,10 +160,10 @@ function draw() {
         // enter selections -- all data elements that don't have a `.dot` element attached to them yet
         enter
           .append("circle")
-          .attr("class", "dot") // Note: this is important so we can identify it in future updates
-          .attr("r", radius)
-          .attr("cy", height - margin.bottom) // initial value - to be transitioned
-          .attr("fill", "#cce5df")
+          //.attr("class", "dot") // Note: this is important so we can identify it in future updates
+          //.attr("r", radius)
+          //.attr("cy", height - margin.bottom) // initial value - to be transitioned
+          //.attr("fill", "#cce5df")
           .attr("cx", d => xScale(d.year)),
       update => update,
       exit =>
@@ -179,7 +174,6 @@ function draw() {
             .delay(d => d.year)
             .duration(500)
             .attr("cy", height - margin.bottom)
-            .attr("fill", "#cce5df")
             .remove()
         )
     )
@@ -191,7 +185,6 @@ function draw() {
           .transition() // initialize transition
           .duration(1000) // duration 1000ms / 1s
           .attr("cy", d => yScale(d.population)) // started from the bottom, now we're here
-          .attr("fill", "#cce5df")
     );
 
   const area = svg
