@@ -118,7 +118,7 @@ function draw() {
         enter
           .append("circle")
           .attr("class", "dot") // Note: this is important so we can identify it in future updates
-          .attr("stroke", "lightgrey")
+          .attr("stroke", "#F0F0F0")
           .attr("opacity", 0.5)
           .attr("fill", d => {
             if (d.country === "RUS") return "#DE282E";
@@ -145,8 +145,8 @@ function draw() {
             .duration(1)
             .attr("stroke", "white")
             .transition()
-            .duration(1)
-            .attr("stroke", "lightgrey")
+            .duration(2)
+            .attr("stroke", "#F0F0F0")
         ),
       exit =>
         exit.call(exit =>
