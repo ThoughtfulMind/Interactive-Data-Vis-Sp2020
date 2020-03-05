@@ -12,3 +12,7 @@ body {
   path.state {
     stroke: rgb(121, 116, 116);
   }
+
+  #hover-content{
+    height: 25px;
+  }
