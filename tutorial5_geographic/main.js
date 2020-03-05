@@ -61,11 +61,11 @@ function init() {
     .join("path")
     .attr("d", path)
     .attr("class", "state")
-    .attr("fill", "transparent")
+    .attr("fill", "#FEFEFA")
     .on("mouseover", d => {
       // when the mouse rolls over this feature, do this
       state.hover["State"] = d.properties.NAME;
-      //state.hover["Cases"] = d.properties.total;
+      state.hover["Cases"] = d.properties.extremes;
       draw(); // re-call the draw function when we set a new hoveredState
     });
 
@@ -91,8 +91,9 @@ function init() {
     .join("circle")
     .attr("r", 20)
     .attr("fill", "red")
-    .attr("fill-opacity", 0.7)
-    .attr("stroke-width", 0.5)
+    .attr("fill-opacity", 0.6)
+    .attr("stroke", "#B22222")
+    .attr("stroke-width", 1)
     .attr("transform", d => {
       const [x, y] = projection([d.longitude, d.latitude]);
       return `translate(${x}, ${y})`;
@@ -109,7 +110,8 @@ function init() {
     const proj = projection.invert([mx, my]);
     //state.hover["Longitude"] = proj[0];
     //state.hover["Latitude"] = proj[1];
-    state.hover["Red dot"] = "confirmed cases";
+    //state.hover["Virus Contracted"] = "travel, unkown, personal contact in the U.S. ";
+    state.hover["Red Dot"] = "confirmed cases";
     //draw();
   });
 
