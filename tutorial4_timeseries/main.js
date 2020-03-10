@@ -33,7 +33,7 @@ let state = {
 /**
  * LOAD DATA
  * */
-d3.csv("../../data/UpdatedFeb28Covid_19_Data.csv", d => ({
+d3.csv("../data/UpdatedFeb28Covid_19_Data.csv", d => ({
   year: new Date(d.Date),
   country: d.Country,
   population: +d.Confirmed,
