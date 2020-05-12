@@ -1,5 +1,10 @@
 The narrative visualization expands on Project 1. It tells the story of general aviation safety over several decades. 
-My question is: Has safety improved over the period or has it declined? 
+My question is: Has safety improved over this period or has it declined? 
+
+I will present an overview of accidents and relevant facts through several visualizations and establish connections 
+between them through a unifiying narrative. I will try to determine if the data shows a chain of causally related events that 
+would lend themselves to a storytelling structure in which the readers uncover new layers until the resolution is reached.
+
 
 Data Source 
 My data source is Kaggle.com: AviationData.csv. 
