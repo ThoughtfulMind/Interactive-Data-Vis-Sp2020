@@ -1,4 +1,4 @@
-article_id,full_name,sex,birth_year,city,state,country,continent,latitude,longitude,occupation,industry,domain,article_languages,page_views,average_views,historical_popularity_index
+show_id,full_name,sex,birth_year,city,state,country,continent,latitude,longitude,occupation,industry,domain,article_languages,page_views,average_views,historical_popularity_index
 308,Aristotle,Male,-384,Stageira,,Greece,Europe,40.33333,23.5,Philosopher,Philosophy,Humanities,152,56355172,370758,31.9938
 22954,Plato,Male,-427,Athens,,Greece,Europe,37.96667,23.71667,Philosopher,Philosophy,Humanities,142,46812003,329662,31.9888
 1095706,Jesus Christ,Male,-4,Judea,,Israel,Asia,32.5,34.9,Religious Figure,Religion,Institutions,214,60299092,281771,31.8981
