@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Small Plane Accidents in the United States</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- SCRIPTS -->
+    <script src="../lib/d3.js"></script>
+    <script src="https://unpkg.com/intersection-observer"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="d3-geo-voronoi.min.js"></script>
+    <script src="d3-delaunay.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
+    <link
+        href="https://fonts.googleapis.com/css?family=Avenir"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section id="header-area">
+        <div id="header-image">
+            <img src="Assets/VizOverviewNarrative.png">
+        <div id="intro-paragraph">
+            <div></div>
+            <div>
+                <div id="intro-title">
+                    Has flight safety improved?
+                </div>
+                <div id="intro-subheader">
+                    Safety has always been a concern for general aviation pilots, so it is worth looking at the accidents and incidents that 
+                    occurred over the past six decades in the United States to help determine 
+                    safety performance and trends and answer the question: Is flying safer?  
+                </div>
+                <div id="intro-copy">At the end of 2017, there were an estimated 609,306 active certificated pilots in the United States. 
+                    This number has been declining gradually over the last decades, down from a high of over 827,000 pilots in 1980. 
+                    This includes 174,883 private pilots. – Wikipedia
+                    
+                </div>
+        </div>
+    </section>
+   <div id="visibility-toggle">
+   <section id="content-area">
+
+            <section id="Viz1" class="section">
+                <div id="Viz1-title" class="section-title">
+                    Where do accidents occur?
+                </div>
+                <div id="d3-vornoi">
+                                <script>
+                                        d3.csv("./GeneralAviationUSLLClean.csv", (d)=> {
+                                                return {
+                                                type: "Feature",
+                                                properties: d,
+                                                geometry: {
+                                                type: "Point",
+                                                coordinates: [+d.Longitude, +d.Latitude]
+                                                }
+                                            }}).then( (d)=> {
+
+                                                //console.log(JSON.stringify(d))
+                                                filteredData = d.filter(d => d.properties.InjurySeverity === "Fatal")
+                                                
+                                                //console.log(filteredData[0])
+
+                                                //console.log("Total length", d3.geoVoronoi().polygons(filteredData).features);
+
+                                                d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-albers-10m.json").then( (us) => {
+
+                                                    console.log("JSON loaded")
+                                                
+                                                    projection = d3.geoAlbers().scale(1300).translate([487.5, 305])
+
+                                                    //projection = ƒ(t)
+
+                                                    // projection
+                                                    const proj = d3.geoAlbers().scale(1300).translate([487.5, 305])
+                                                    
+                                                    svg = d3
+                                                    .select("#d3-vornoi")
+                                                    .append("svg")
+                                                    .attr("width", 975)
+                                                    .attr("height", 610);
+
+                                                    /*const svg = d3
+                                                        .create("svg") // d3.select("#container")
+                                                        .attr("viewBox", [0, 0, 975, 610]);
+                                                    */
+
+                                                    svg.append("path")
+                                                        .datum(topojson.merge(us, us.objects.states.geometries.filter(d => d.id !== "02" && d.id !== "15")))
+                                                        .attr("fill", "#F6F7F7")
+                                                        .attr("d", d3.geoPath());
+                                                    svg
+                                                        .append("path")
+                                                        .attr("fill", "red")
+                                                        .attr("opacity", .3)
+                                                        .datum({ type: "FeatureCollection", features: filteredData })
+                                                        .attr("d", d3.geoPath(proj).pointRadius(1.5));
+
+                                                    svg
+                                                        .append("g")
+                                                        .attr("fill", "none")
+                                                        .attr("stroke", "#06469a")
+                                                        .attr("pointer-events", "all")
+                                                        .selectAll("path")
+                                                        .data(d3.geoVoronoi().polygons(filteredData).features)
+                                                        .join("path")
+                                                        .attr("d", d3.geoPath(proj))
+                                                        .append("title")
+                                                        .text(d => {
+                                                            const location = d.properties
+                                                            //console.log("d", d)
+                                                            //console.log("d.properties.site.properties",d.properties.site.properties["Location"])   
+                                                            return d.properties.site.properties["Location"]
+                                                                    //return "test"
+                                                                });
+
+                                                        svg.node(); // observable specific
+                                                    })
+                                                })
+                                            
+                                    
+                                    </script>
+
+                                    </div>
+                
+            </section>
+
+            <section id="Viz2" class="section">
+                <div id="Viz2-title" class="section-title">
+                    Safety over time
+                </div>
+            </section>
+            <section id="Viz2" class="section">
+                        <div style="padding:0em 10% 5em 10%">
+                                <p style="margin:2em; text-align: left;">Until 2014, the general aviation fatal accident rate appeared to have remained relatively static according to the FAA’s flight hours estimates. 
+                                Since then, the fatal accident rate is decreasing, the preliminary estimate for FY 2017 is a fatal accident of 0.84 with 209 GA fatal accidents 
+                                with 347 fatalities.  
+                                <p style="margin:2em; text-align: left;">In 2016, the fatal accident rate was 0.89 with 219 GA fatal accidents with 411 fatalities. </p> 
+                                <p style="margin:2em; text-align: left;">In 2015, the fatal accident rate was 0.99 with 238 GA fatal accidents with 384 fatalities. </p>
+                                <p style="margin:2em; text-align: left;">In 2014, the fatal accident rate was 1.09 fatal accidents per 100,000 hours, 
+                                with 252 fatal accidents. </p>
+                                <p style="margin:2em; text-align: left;">In 2013, the fatal accident rate was 1.11 fatal accidents per 100,000 hours, with 259 GA fatal accidents.  </p>
+                                <p style="margin:2em; text-align: left;">In 2012, the fatal accident rate was 1.09 fatal accidents per 100,000 hours flown, with 267 GA fatal accidents. </p>
+                                <p style="margin:2em; text-align: left;">In 2011, the fatal accident rate was 1.12 fatal accidents per 100,000 hours flown, with 278 GA fatal accidents. </p>
+                                <p style="margin:2em; text-align: left;">In 2010, the fatal accident rate was 1.10 fatal accidents per 100,000 hours flown, with 272 GA fatal accidents. </p>
+                                <p style="margin:2em; text-align: left;">There was a total of 225 fatal accidents in 2018, up from 203 fatal accidents in 2017. This followed 213 fatal accidents in 2016.</p> 
+                                </div>
+            </section>
+        </div>
+        <div></div>
+    </section>
+</div>
+
+
+
+
+    
+</body>
+
+</html>

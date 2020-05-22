@@ -1,14 +1,28 @@
+
+
 body {
     /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
     font-family: 'Source Sans Pro', sans-serif;
     padding: 1em 3em;
+    
   }
-  
+  .header {
+    font-size: 14px;
+    stroke: gray;
+  }
+
   .label {
     fill: white;
     text-anchor: middle;
   }
+
+  .copy {
+    font-size: 14px;
+    stroke: gray;
+  }
   
   .axis {
-    font-size: 16px;
+    font-size: 14px;
+    stroke: gray;
   }
+  

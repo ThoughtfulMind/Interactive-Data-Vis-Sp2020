@@ -119,7 +119,7 @@ function draw() {
           .append("circle")
           .attr("class", "dot") // Note: this is important so we can identify it in future updates
           .attr("stroke", "#F0F0F0")
-          .attr("opacity", 0.5)
+          .attr("opacity", 0.4)
           .attr("fill", d => {
             if (d.country === "RUS") return "#DE282E";
             else if (d.country === "USA") return "#3c3b6e";

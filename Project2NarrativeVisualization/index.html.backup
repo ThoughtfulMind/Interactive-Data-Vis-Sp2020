@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Small Plane Accidents in the United States</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Avenir"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section id="header-area">
+        <div id="header-image">
+            <img src="Assets/VizOverviewNarrative.png">
+        <div id="intro-paragraph">
+            <div></div>
+            <div>
+                <div id="intro-title">
+                    Has flight safety improved?
+                </div>
+                <div id="intro-subheader">
+                    Safety has always been a concern for general aviation pilots, so it is worth looking at the accidents and incidents that 
+                    occurred over the past six decades in the United States to help determine 
+                    safety performance and trends and answer the question: Is flying safer?  
+                </div>
+                <div id="intro-copy">As of the end of 2017, in the US, there were an estimated 609,306 active certificated pilots. 
+                    This number has been declining gradually over the last decades, down from a high of over 827,000 pilots in 1980. 
+                    This includes 174,883 private pilots. – Wikipedia
+                    
+                </div>
+        </div>
+    </section>
+   <div id="visibility-toggle">
+   <section id="content-area">
+
+            <section id="Viz1" class="section">
+                <div id="Viz1-title" class="section-title">
+                    For the love of flight
+                </div>
+                <div id="Viz1-content" class="content"></div>
+                        <div id="paragraph1" class="narrative Viz1 first-paragraph">
+                          <p>Female pilots make up about 7 percent of all certificated pilots, up from 6.2 percent ten years ago.</p>
+                        </div>
+                    <chart>
+                            <div id="chart1-visual"></div>
+                        </div>
+                    </chart>
+                </div>
+            </section>
+
+            <section id="Viz2" class="section">
+                <div id="Viz2-title" class="section-title">
+                    Safety over time
+                </div>
+                <div id="Viz2-content" class="content">
+                        <div id="paragraph5" class="Viz2-paragraph">
+                          <div>
+                            <br><p>
+                                There was a total of 225 fatal accidents in 2018, up from 203 fatal accidents in 2017 which followed 213 fatal accidents in 2016. 
+                                </p>
+                          </br>
+                        </div>
+            </section>
+                        </chart>
+                    </div>
+            </section>
+        </div>
+        <div></div>
+    </section>
+</div>
+
+
+
+
+    <!-- SCRIPTS -->
+    <script src="Mike Bobstock"></script>
+    <script type="module" src="./main.js"></script>
+    <script src="https://unpkg.com/intersection-observer"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+</body>
+
+</html>

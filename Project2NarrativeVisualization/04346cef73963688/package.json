@@ -1,0 +1,14 @@
+{
+  "name": "04346cef73963688",
+  "main": "04346cef73963688@128.js",
+  "version": "128.0.0",
+  "homepage": "https://observablehq.com/d/04346cef73963688",
+  "author": {
+    "name": "thoughtfulmind",
+    "url": "https://observablehq.com/@thoughtfulmind"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}

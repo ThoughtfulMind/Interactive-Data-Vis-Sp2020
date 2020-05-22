@@ -205,9 +205,9 @@ function draw() {
         .transition() // sets the transition on the 'Enter' + 'Update' selections together.
         .duration(1000)
       .attr("stroke", "#69b3a2")
-      //.attr("stroke-width", 1.5)
-      //.attr("fill", "#cce5df")
-      .attr("opacity", 1)
+      .attr("stroke-width", 5.5)
+      .attr("fill", "#cce5df")
+      .attr("opacity", 30)
       .attr("d", d => areaFunc(d))
     );
 }

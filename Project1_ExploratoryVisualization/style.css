@@ -1,69 +1,241 @@
+/* HTML/STYLING
+* document styling 
+ * */
+
 body {
-    /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
-    font-family: "Source Sans Pro", sans-serif;
-    padding: 1em 3em;
-  }
-  #backgroundimage {
-    background-image: url("SmallPlaneDataViz.png");
-    background-color: #fdfbfb;
-  }
-  #dashboard {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr, 1fr;
-    column-gap: 2em;
-  }
+  font-family: 'Avenir', sans-serif;
+  margin: 0%;
+  color: #212121c2;
+}
+
+h1 {
+  font-family: 'Avenir';
+  font-size: 50px;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: 'Avenir';
+  font-size: 20px;
+  font-weight: 600;
+}
+
+h3 {
+  font-family: 'Avenir';
+  font-size: 18px;
+  font-weight: 600;
+}
+
+p {
+  font-family: 'Avenir';
+  font-size: 14px;
+  padding: 0px;
+  margin: 0px;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* INTRO BLUE BOX
+* this is the block of color for the first narrative description
+ * */
+
+#title-header {
+  background-color: #06469a;
+  padding: 0;
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+#intro-paragraph {
+  font-family: 'Avenir';
+  color: #b7c7df;
+  background-color: #06469a;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+#intro-title {
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 50px;
+  color: white;
+  padding: 10% 0% 5% 0%;
+}
+
+#intro-subheader {
+  font-family: 'Avenir';
+  font-size:18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: white;
+  padding: 2% 0% 0% 0%;
+}
+
+#intro-copy {
+  font-size: 16px;
+  color: #b7c7df;
+  padding: 2% 5% 5% 5%;
+}
+
+#intro-paragraph {
+  font-size: 40px;
+  text-align: center;
+  padding: 2em 0em 2em 0em;
+  color: #b7c7df;
+  text-decoration: none;
+}
+
+
+/* VISUALIZATIONS 
+* the Voronoi or map and the line chart 
+ * */
+
+#content-area {
+  display: grid;
+  //grid-template-columns: 1fr 8fr 1fr;
+  margin-top: "3em";
+  text-align: center;
+}
+
+.section-title {
+  z-index: 100;
+  padding: 1%;
+  text-align: center;
+  position: sticky;
+  top: 0%;
+  background-color: white;
+  border-bottom: 2px solid #06469a;
+  font-family: 'Avenir';
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.section {
+  margin-top: 3em;
+}
+
+#Viz1-title {
+  border-bottom: 2px solid #06469a;
+}
+
+#Viz2-title {
+  border-bottom: 2px solid #06469a;
+}
+
+.content {
+  display: grid;
+  /*grid-template-columns: 1fr 2.5fr;
+  grid-template-rows: 1fr;*/
+  column-gap: 10px;
+}
+
+#Viz1-copy {
+  background-color: #f3f5f7;
+}
+
+#Viz2-copy {
+  background-color: #f3f5f7;
+}
+
+.narrative {
+  padding: 5%;
+  margin: 75% 0% 200% 0%;
+}
+
+.first-point {
+  margin: 100% 0% 200% 0%;
+}
+
+.Viz1 {
+  background-color: #f3f5f7;
+  color: white;
+  padding: 30px;
+}
+
+.Viz2 {
+  background-color: rgb(46, 90, 171);
+  color: white;
+}
+
+.visual {
+  margin: 0% 1% 0% 5%;
+  position: sticky;
+  top: 10%;
+}
+
+.visual-title {
+  text-align: center;
+  font-size: 18px;
+  margin: 0px;
+  font-family: 'Avenir';
+  font-weight: 800;
+  color: rgb(149, 150, 151);
+}
+
+
+/* CHARTS VORONOI/MAP */
+
+#chart1-title {
+  transform: translateY(35px)
+}
+
+#chart1-subtitle {
+  text-align: center;
+  font-family: 'Avenir';
+  font-size: 12px;
+  color: rgb(149, 150, 151);
+  opacity: 0;
+  margin: 5px;
+  transform: translateY(35px)
+}
+
+
+/* CHART - LINE CHART */
+
+#point5 {
+  color: white;
+  padding: 30px;
+}
+
+#chart2 {
+  display: grid;
+/*  grid-template-columns: 1fr 1fr; */
+  column-gap: 6%;
+  padding: 2% 0% 0% 0%;
   
-  #table {
-    grid-row-start: 1;
-    grid-row-end: span 2;
-  }
-  
-  #barchart, #count {
-    padding-top: 1em;
-  }
-  
-  /* Table styles */
-  thead,
-  tbody tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-    border-bottom: 1px solid white;
-  }
-  
-  tbody {
-    width: 100%;
-    display: block;
-    height: 70vh;
-    overflow: scroll;
-  }
-  
-  th,
-  td {
-    text-align: left;
-    padding: 0.5em;
-    cursor: pointer;
-    font-weight: lighter;
-    text-transform: capitalize;
-  }
-  
-  tr:hover {
-    font-weight: 900;
-  }
-  
-  /* Count styles */
-  #count {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .metric {
-    flex-grow: 1;
-    text-align: center;
-  }
-  
-  .metric > .number {
-    color: #ccc;
-    font-size: 25px;
-  }
+}
+
+#chart2-area {
+  position: sticky;
+  top: 0%;
+  padding: 2% 0% 0% 0%;
+}
+
+#chart2-tooltip {
+  font-family: 'Avenir';
+  line-height: 16px;
+  margin: 5% 0%;
+  padding: 2%;
+  position: sticky;
+  top: 80%;
+  background-color: rgb(238, 237, 237);
+}
+
+#tooltip-small {
+  font-size: 12px;
+  color: grey;
+  padding: 0px;
+  margin: 0px;
+}
+
+#part2-copy {
+  padding-bottom: 20%;
+}
