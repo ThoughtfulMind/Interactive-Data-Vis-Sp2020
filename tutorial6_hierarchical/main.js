@@ -51,9 +51,12 @@ function init() {
     state.data,
     v => ({ count: v.length, name: v }), // reduce function,
     d => d.full_name,
-    d => d.domain,
     d => d.occupation,
-    d => d.industry,
+    //d => d.industry,
+   // d => d.historical_popularity_index,
+   // d => d.country,
+   // d => d.birth_year,
+
   );
 
   console.log("rolledUp", rolledUp);
@@ -102,7 +105,7 @@ function init() {
           .ancestors()
           .reverse()
           .map(d => d.data[0])
-          .join("/"),
+          .join(" "),
         value: d.value,
       };
       draw();
@@ -120,8 +123,10 @@ function draw() {
       .html(
         `
         <div>Name: ${state.hover.name}</div>
-        <div>Domain: ${state.hover.name}</div>
-        <div>Historical Popularity Index: ${state.hover.value}</div>
+        <div>Country: ${state.hover.country}</div>
+        <div>Birth Year: ${state.hover.birth_year}</div>
+        <div>Industry: ${state.hover.industry}</div>
+        <div>Historical Popularity Index: ${state.hover.historical_popularity_index}</div>
       `
       )
       .transition()
