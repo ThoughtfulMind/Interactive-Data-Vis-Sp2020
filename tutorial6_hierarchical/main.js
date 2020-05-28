@@ -51,15 +51,15 @@ function init() {
     state.data,
     v => ({ count: v.length, name: v }), // reduce function,
     d => d.full_name,
-    d => d.occupation,
+     d => d.occupation,
     //d => d.industry,
-   // d => d.historical_popularity_index,
-   // d => d.country,
-   // d => d.birth_year,
+    d => d.historical_popularity_index,
+    //d => d.country,
+   // d => d.birth_year
 
   );
 
-  console.log("rolledUp", rolledUp);
+  //console.log("rolledUp", rolledUp);
 
   // groups the data by genre, type and rating
   // make hierarchy
@@ -119,14 +119,13 @@ function init() {
  * */
 function draw() {
   if (state.hover) {
+
+    console.log(state.hover.name)
     tooltip
       .html(
         `
-        <div>Name: ${state.hover.name}</div>
-        <div>Country: ${state.hover.country}</div>
-        <div>Birth Year: ${state.hover.birth_year}</div>
-        <div>Industry: ${state.hover.industry}</div>
-        <div>Historical Popularity Index: ${state.hover.historical_popularity_index}</div>
+        <div>Name: ${state.hover.name}<br/>
+     
       `
       )
       .transition()

@@ -196,11 +196,6 @@ a {
 
 /* CHART - LINE CHART */
 
-#point5 {
-  color: white;
-  padding: 30px;
-}
-
 #chart2 {
   display: grid;
 /*  grid-template-columns: 1fr 1fr; */
